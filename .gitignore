@@ -1,0 +1,6 @@
+# tinker
+*.arc
+*.dyn
+*.log
+
+.vscode/
