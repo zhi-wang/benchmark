@@ -3,4 +3,7 @@
 *.dyn
 *.log
 
+output/*
+!output/*.sh
+
 .vscode/
