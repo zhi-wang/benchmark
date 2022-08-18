@@ -7,3 +7,5 @@ output/*
 !output/*.sh
 
 .vscode/
+
+__pycache__/
