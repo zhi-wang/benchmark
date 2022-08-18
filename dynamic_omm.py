@@ -44,8 +44,12 @@ barostat = MonteCarloBarostat(atmsph, kelvin, volumetrial)
 pdb = PDBFile(xyzfile)
 forcefield = ForceField(key.parameters)
 system = forcefield.createSystem(pdb.topology,
-    nonbondedMethod=PME, ewaldErrorTolerance=key.ewaldalpha, nonbondedCutoff=key.elecutoff,
+    nonbondedMethod=PME, nonbondedCutoff=key.elecutoff,
     vdwCutoff=key.vdwcutoff, mutualInducedTargetEpsilon=key.polareps)
+AngPerNm = 10
+for f in system.getForces():
+    if isinstance(f, AmoebaMultipoleForce):
+        f.setPMEParameters(key.ewaldalpha*AngPerNm, key.nfft1, key.nfft2, key.nfft3)
 if ensemble in [2, 4]:
     system.addForce(thermostat)
 if ensemble == 4:
