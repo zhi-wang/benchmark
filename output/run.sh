@@ -11,7 +11,7 @@ $INFO9
 echo; echo NVE; echo; echo
 
 echo DHFR; echo
-$OPMM ../dhfr/dhfr2.py 1000 1 0.5 1
-cp ../dhfr/dhfr2.[xk]* .
+$OPMM ../dhfr2/dhfr2.py 1000 1 0.5 1
+cp ../dhfr2/dhfr2.[xk]* .
 $DYN9 dhfr2.xyz        1000 1 0.5 1
 echo; echo
